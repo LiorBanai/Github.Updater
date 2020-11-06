@@ -29,6 +29,7 @@ namespace Github.Updater
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnExit = new System.Windows.Forms.Button();
             this.btnStartAnalogy = new System.Windows.Forms.Button();
             this.lblTitleValue = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@ namespace Github.Updater
             this.Controls.Add(this.btnStartAnalogy);
             this.Controls.Add(this.lblTitleValue);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Github Updater";
             this.ResumeLayout(false);

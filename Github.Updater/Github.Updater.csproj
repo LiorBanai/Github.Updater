@@ -17,6 +17,8 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ApplicationIcon>GitHubUpdater.ico</ApplicationIcon>
+		<NoWin32Manifest>true</NoWin32Manifest>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="System.IO.Compression" Version="4.3.0" />
