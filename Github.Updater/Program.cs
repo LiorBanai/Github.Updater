@@ -30,6 +30,7 @@ namespace Github.Updater
             string downloadURL = null;
             string targetFolder = null;
             string processToKill = string.Empty;
+            string applicationToRunPostUpdate = string.Empty;
             if (args.Length >= 4)
             {
                 title = args[0];
@@ -42,13 +43,16 @@ namespace Github.Updater
                 Application.Exit();
                 return;
             }
-
-            if (args.Length == 5 && args[4]=="LaunchDebugger")
+            if (args.Length >= 5)
+            {
+                applicationToRunPostUpdate = args[4];
+            }
+            if (args.Length == 6 && args[5]=="LaunchDebugger")
             {
                 Debugger.Launch();
             }
             KilAnalogyIfNeeded(processToKill);
-            Application.Run(new MainForm(title, downloadURL, targetFolder));
+            Application.Run(new MainForm(title, downloadURL, targetFolder,applicationToRunPostUpdate));
         }
 
         private static void KilAnalogyIfNeeded(string processToKIll)

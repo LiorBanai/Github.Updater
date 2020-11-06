@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Github.Updater
@@ -18,13 +11,15 @@ namespace Github.Updater
         private string Title { get; }
         private string DownloadURL { get; }
         private string TargetFolder { get; }
+        private string ApplicationToRunPostUpdate { get; set; }
         public MainForm()
         {
             InitializeComponent();
         }
 
-        public MainForm(string title, string downloadURL, string targetFolder) : this()
+        public MainForm(string title, string downloadURL, string targetFolder, string applicationToRun) : this()
         {
+            ApplicationToRunPostUpdate = applicationToRun;
             Title = title;
             DownloadURL = downloadURL;
             TargetFolder = targetFolder;
@@ -44,6 +39,8 @@ namespace Github.Updater
                 if (AutoUpdater.DownloadUpdate(this))
                 {
                     DialogResult = DialogResult.OK;
+                    btnStartAnalogy.Visible = !string.IsNullOrEmpty(ApplicationToRunPostUpdate) &&
+                                              File.Exists(ApplicationToRunPostUpdate);
 
                 }
             }
@@ -56,9 +53,9 @@ namespace Github.Updater
 
         private void btnStartAnalogy_Click(object sender, EventArgs e)
         {
-
+            Process.Start(ApplicationToRunPostUpdate);
         }
 
-       
+
     }
 }

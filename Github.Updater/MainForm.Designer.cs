@@ -58,6 +58,7 @@ namespace Github.Updater
             this.btnStartAnalogy.TabIndex = 7;
             this.btnStartAnalogy.Text = "Start Application";
             this.btnStartAnalogy.UseVisualStyleBackColor = true;
+            this.btnStartAnalogy.Click += new System.EventHandler(this.btnStartAnalogy_Click);
             // 
             // lblTitleValue
             // 
