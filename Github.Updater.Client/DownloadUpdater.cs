@@ -85,7 +85,8 @@ namespace Github.Updater.Client
         {
             string version = "";
             if (_currentFrameworkAttribute.FrameworkName.EndsWith("4.7.1") ||
-                _currentFrameworkAttribute.FrameworkName.EndsWith("4.7.2"))
+                _currentFrameworkAttribute.FrameworkName.EndsWith("4.7.2") ||
+                _currentFrameworkAttribute.FrameworkName.EndsWith("4.8"))
             {
                 version = "net472";
             }
