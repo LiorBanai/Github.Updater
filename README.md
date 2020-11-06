@@ -22,7 +22,9 @@ very easy to use:
 - Reference Github.Updater.Client [nuget](https://www.nuget.org/packages/Github.Updater.Client/).
 - Create new Updater:
 ```csharp
-       Updater = new Updater("Analogy Log Viewer", "Analogy-LogViewer/Analogy.LogViewer", updateFolder, "c:\", downloadSpeed,downloadProgress, downloadProgressValue);
+ 
+Updater = new Updater("Analogy Log Viewer", "Analogy-LogViewer/Analogy.LogViewer", updateFolder, "c:\temp"
+                     ,downloadSpeed,downloadProgress, downloadProgressValue);
            
 ```
 
