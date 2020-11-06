@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <LangVersion>8.0</LangVersion>
+	  <Version>0.1.0</Version>
+	  <Authors>Lior Banai</Authors>
+	  <Copyright>Lior Banai</Copyright>
+	  <Copyright>Lior Banai © 2020</Copyright>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/LiorBanai/Github.Updater</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/LiorBanai/Github.Updater</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>
