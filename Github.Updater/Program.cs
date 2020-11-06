@@ -16,7 +16,7 @@ namespace Github.Updater
         [STAThread]
         static void Main(string[] args)
         {
-            //Debugger.Launch();
+           
 #if NETCOREAPP
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
 #endif
@@ -30,7 +30,7 @@ namespace Github.Updater
             string downloadURL = null;
             string targetFolder = null;
             string processToKill = string.Empty;
-            if (args.Length == 3)
+            if (args.Length >= 4)
             {
                 title = args[0];
                 downloadURL = args[1];
@@ -41,6 +41,11 @@ namespace Github.Updater
             {
                 Application.Exit();
                 return;
+            }
+
+            if (args.Length == 5 && args[4]=="LaunchDebugger")
+            {
+                Debugger.Launch();
             }
             KilAnalogyIfNeeded(processToKill);
             Application.Run(new MainForm(title, downloadURL, targetFolder));

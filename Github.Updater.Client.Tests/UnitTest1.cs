@@ -15,7 +15,7 @@ namespace Github.Updater.Client.Tests
             Action<string> downloadSpeed = (string s) => { };
             Action<string> downloadProgress = (string s) => { }; 
             Action<int> downloadProgressValue = (int v) => { };
-            var client = new Updater(updateFolder, "", downloadSpeed, downloadProgress, downloadProgressValue);
+            var client = new Updater("Test","test",updateFolder, "", downloadSpeed, downloadProgress, downloadProgressValue);
             var result = await client.CheckNewVersionExistsForUpdater();
         }
 

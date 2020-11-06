@@ -46,6 +46,8 @@ namespace Github.Updater.Client.Tests.UI
             this.txtRepo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbApplicationFolder = new System.Windows.Forms.TextBox();
+            this.txtbRepoName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,7 +86,7 @@ namespace Github.Updater.Client.Tests.UI
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(12, 110);
+            this.progressBar1.Location = new System.Drawing.Point(12, 179);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(923, 33);
             this.progressBar1.TabIndex = 35;
@@ -92,7 +94,7 @@ namespace Github.Updater.Client.Tests.UI
             // lblDownloadSpeed
             // 
             this.lblDownloadSpeed.AutoSize = true;
-            this.lblDownloadSpeed.Location = new System.Drawing.Point(6, 71);
+            this.lblDownloadSpeed.Location = new System.Drawing.Point(6, 140);
             this.lblDownloadSpeed.Name = "lblDownloadSpeed";
             this.lblDownloadSpeed.Size = new System.Drawing.Size(161, 20);
             this.lblDownloadSpeed.TabIndex = 36;
@@ -101,7 +103,7 @@ namespace Github.Updater.Client.Tests.UI
             // btnDownloadUpdate
             // 
             this.btnDownloadUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownloadUpdate.Location = new System.Drawing.Point(774, 64);
+            this.btnDownloadUpdate.Location = new System.Drawing.Point(774, 133);
             this.btnDownloadUpdate.Name = "btnDownloadUpdate";
             this.btnDownloadUpdate.Size = new System.Drawing.Size(161, 34);
             this.btnDownloadUpdate.TabIndex = 37;
@@ -112,7 +114,7 @@ namespace Github.Updater.Client.Tests.UI
             // lblDownloadProgress
             // 
             this.lblDownloadProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDownloadProgress.Location = new System.Drawing.Point(506, 71);
+            this.lblDownloadProgress.Location = new System.Drawing.Point(506, 140);
             this.lblDownloadProgress.Name = "lblDownloadProgress";
             this.lblDownloadProgress.Size = new System.Drawing.Size(262, 20);
             this.lblDownloadProgress.TabIndex = 38;
@@ -137,7 +139,11 @@ namespace Github.Updater.Client.Tests.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtRepo);
+            this.groupBox1.Controls.Add(this.txtbRepoName);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.progressBar1);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtbUpdaterFolder);
             this.groupBox1.Controls.Add(this.lblDownloadProgress);
             this.groupBox1.Controls.Add(this.btnFolder);
@@ -147,23 +153,21 @@ namespace Github.Updater.Client.Tests.UI
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(956, 149);
+            this.groupBox1.Size = new System.Drawing.Size(956, 218);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Updater Test";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtRepo);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtbApplicationFolder);
             this.groupBox2.Controls.Add(this.btnApplicationFolder);
             this.groupBox2.Controls.Add(this.btnDownloadApplication);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 149);
+            this.groupBox2.Location = new System.Drawing.Point(0, 218);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(956, 266);
+            this.groupBox2.Size = new System.Drawing.Size(956, 197);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Test Application";
@@ -171,7 +175,7 @@ namespace Github.Updater.Client.Tests.UI
             // btnApplicationFolder
             // 
             this.btnApplicationFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApplicationFolder.Location = new System.Drawing.Point(911, 52);
+            this.btnApplicationFolder.Location = new System.Drawing.Point(911, 26);
             this.btnApplicationFolder.Name = "btnApplicationFolder";
             this.btnApplicationFolder.Size = new System.Drawing.Size(32, 27);
             this.btnApplicationFolder.TabIndex = 40;
@@ -182,7 +186,7 @@ namespace Github.Updater.Client.Tests.UI
             // 
             this.btnDownloadApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownloadApplication.Location = new System.Drawing.Point(14, 85);
+            this.btnDownloadApplication.Location = new System.Drawing.Point(14, 59);
             this.btnDownloadApplication.Name = "btnDownloadApplication";
             this.btnDownloadApplication.Size = new System.Drawing.Size(929, 34);
             this.btnDownloadApplication.TabIndex = 44;
@@ -193,7 +197,7 @@ namespace Github.Updater.Client.Tests.UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 56);
+            this.label3.Location = new System.Drawing.Point(14, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(222, 20);
             this.label3.TabIndex = 41;
@@ -203,29 +207,48 @@ namespace Github.Updater.Client.Tests.UI
             // 
             this.txtRepo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRepo.Location = new System.Drawing.Point(491, 19);
+            this.txtRepo.Location = new System.Drawing.Point(469, 93);
             this.txtRepo.Name = "txtRepo";
-            this.txtRepo.Size = new System.Drawing.Size(452, 27);
+            this.txtRepo.Size = new System.Drawing.Size(466, 27);
             this.txtRepo.TabIndex = 46;
             this.txtRepo.Text = "Analogy-LogViewer/Analogy.LogViewer";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 23);
+            this.label5.Location = new System.Drawing.Point(14, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(448, 20);
+            this.label5.Size = new System.Drawing.Size(449, 20);
             this.label5.TabIndex = 47;
-            this.label5.Text = "Application Repository (Organisation/Repo or User Namne/Repo):";
+            this.label5.Text = "Application Repository (Organization/Repo or User Namne/Repo):";
             // 
             // txtbApplicationFolder
             // 
             this.txtbApplicationFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbApplicationFolder.Location = new System.Drawing.Point(242, 52);
+            this.txtbApplicationFolder.Location = new System.Drawing.Point(242, 26);
             this.txtbApplicationFolder.Name = "txtbApplicationFolder";
             this.txtbApplicationFolder.Size = new System.Drawing.Size(663, 27);
             this.txtbApplicationFolder.TabIndex = 39;
+            // 
+            // txtbRepoName
+            // 
+            this.txtbRepoName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbRepoName.Location = new System.Drawing.Point(216, 60);
+            this.txtbRepoName.Name = "txtbRepoName";
+            this.txtbRepoName.Size = new System.Drawing.Size(681, 27);
+            this.txtbRepoName.TabIndex = 48;
+            this.txtbRepoName.Text = "Analogy Log Viewer";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Application Name:";
             // 
             // Form1
             // 
@@ -268,6 +291,8 @@ namespace Github.Updater.Client.Tests.UI
         private System.Windows.Forms.Button btnDownloadApplication;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbApplicationFolder;
+        private System.Windows.Forms.TextBox txtbRepoName;
+        private System.Windows.Forms.Label label2;
     }
 }
 
