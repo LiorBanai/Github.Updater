@@ -53,43 +53,44 @@ namespace Github.Updater.Client
             return GetVersionFromTagName(update.Value.TagName) > UpdaterVersion;
         }
 
-        public async Task DownloadUpdaterIfNeeded(Action<string> callback)
+        public async Task DownloadUpdaterIfNeeded(Action<string>? callback=null)
         {
             var update = await GetLatestUpdater();
             if (!update.HasValue)
             {
-                callback("Updater was not found");
+                callback?.Invoke("Updater was not found");
                 return;
             }
-            if (!File.Exists(UpdaterExecutable))
+            if (!File.Exists(FullUpdaterPath))
             {
-                callback("Updater Manager was not found." + Environment.NewLine + "It will be downloaded right now");
+                callback?.Invoke("Updater Manager was not found. It will be downloaded right now");
                 await DownloadUpdater(update.Value.UpdaterAsset);
 
             }
             else if (GetVersionFromTagName(update.Value.TagName) > UpdaterVersion)
             {
-                callback("Updater Manager is out of date." + Environment.NewLine + "Latest version will be downloaded right now");
+                callback?.Invoke("Updater Manager is out of date. Latest version will be downloaded right now");
                 await DownloadUpdater(update.Value.UpdaterAsset);
             }
             else
             {
-                callback("No need to download Updater");
+                callback?.Invoke("No need to download Updater");
             }
         }
         private async Task DownloadUpdater(GithubObjects.GithubAsset updaterAsset)
         {
             TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-            var downloadUpdater = new DownloadUpdater(updaterAsset.BrowserDownloadUrl, Path.GetDirectoryName(UpdaterExecutable),ReportDownloadSpeed,ReportDownloadProgress,ReportDownloadProgressValue, CurrentFrameworkAttribute, tcs);
+            var downloadUpdater = new DownloadUpdater(updaterAsset.BrowserDownloadUrl, Path.GetDirectoryName(FullUpdaterPath),ReportDownloadSpeed,ReportDownloadProgress,ReportDownloadProgressValue, CurrentFrameworkAttribute, tcs);
             await downloadUpdater.Download();
         }
         private Version? GetVersionFromTagName(string? tagName)
         {
             return tagName == null ? null : new Version(tagName.Replace("V", "").Replace("v", ""));
         }
-        public async Task<(string TagName, GithubObjects.GithubAsset UpdaterAsset)?> GetLatestUpdater()
+       
+        public static async Task<(string TagName, GithubObjects.GithubAsset UpdaterAsset)?> GetLatestUpdater(string? githubToken=null)
         {
-            var (newData, release) = await GithubInformation.GetLatestReleaseInformation(UpdaterRepository, "Github.Updater.Client", GitHubToken, DateTime.MinValue);
+            var (newData, release) = await GithubInformation.GetLatestReleaseInformation(UpdaterRepository, "Github.Updater.Client", githubToken, DateTime.MinValue);
             return release == null
                 ? ((string TagName, GithubObjects.GithubAsset UpdaterAsset)?) null
                 : (release.TagName, release.Assets.First(a => a.Name.Contains("Github.Updater")));
