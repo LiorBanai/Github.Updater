@@ -26,7 +26,7 @@ very easy to use:
            
 ```
 
-with the following parameters: application name, repository name (both Organization name or user name andthe repository),folder to  download the updater and optional callbacksfor reporting progress.
+with the following parameters: application name, repository name (both Organization name or user name and the repository),folder to  download the updater and optional callbacksfor reporting progress.
 
 - after that just pass your current version and call the following line (make sure you have releases with tag names; VX.X.X e.g V4.1.2)
 
