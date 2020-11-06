@@ -34,7 +34,7 @@ with the following parameters: application name, repository name (both Organizat
 
 ```csharp
 
-var currentVersion=new Version(4,2,9);
+var currentVersion= new Version(4,2,9);
 var newVersion = await Updater.CheckNewVersionExistsForApplication(currentVersion);
     if (newVersion)
        {
@@ -43,3 +43,6 @@ var newVersion = await Updater.CheckNewVersionExistsForApplication(currentVersio
        }
           
 ```
+
+
+You can run example in the Github.Updater.Client.Tests.UI project the download [Analogy Log Viewer](https://github.com/Analogy-LogViewer/Analogy.LogViewer) latest version.
