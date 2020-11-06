@@ -124,7 +124,7 @@ namespace Github.Updater.Client
             }
 
             var currentProcessName = Process.GetCurrentProcess().ProcessName;
-            string launchDebugger = "LaunchDebugger";
+            string launchDebugger = "";// "LaunchDebugger";
             var processStartInfo = new ProcessStartInfo();
             string data = $"\"{ApplicationTitle}\" {asset.BrowserDownloadUrl} \"{targetFolder}\" {currentProcessName} {launchDebugger}";
             processStartInfo.Arguments = data;
