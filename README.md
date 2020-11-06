@@ -1,4 +1,6 @@
-<h1 align="left">Github.Updater <img src="./Assets/GitHubNotifier.jpg" align="right" width="63px" height="63px"></h1> 
+<h1 align="left">Github.Updater <img src="./Assets/GitHubUpdater.jpg" align="right" width="63px" height="63px"></h1> 
+
+![.NET Core Desktop](https://github.com/LiorBanai/Github.Updater/workflows/.NET%20Core%20Desktop/badge.svg)
 <a href="https://github.com/LiorBanai/Github.Updater/issues">
     <img src="https://img.shields.io/github/issues/LiorBanai/Github.Updater"  alt="Issues"/>
 </a>
